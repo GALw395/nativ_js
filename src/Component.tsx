@@ -1,34 +1,30 @@
-import { ChangeEvent, MouseEvent } from "react"
+
+
+type LessonsPropsType = {
+  title: string
+}
+
+export type ManPropsType = {
+  name: string,
+  age: number,
+  lessons: LessonsPropsType[]
+}
 
 
 
-export function Component() {
 
-  const deleteUser = (event: MouseEvent<HTMLButtonElement>) => {
-    
-    alert(event.currentTarget.name)
-  }
-  // const saveUser = () => {
-  //   alert('User saved')
-  // }
-  const onNameChanged = () => {
-    console.log('name changed')    
-  }
-  const focusLostHandler = () => {
-    console.log('focus lost')    
-  }
-  const onAgeChanged = (event: ChangeEvent<HTMLInputElement>) => {
-    console.log('age changed ' + event.currentTarget.value)    
-  }
-
+export const Component = (props: ManPropsType) => {
+  const {name, age, lessons} = props
 
   return (
-    <div> <textarea onChange={onNameChanged} onBlur={focusLostHandler}>Lexa</textarea>
-    <input onChange={onAgeChanged} type="number" />
-      <button name="delete" onClick={deleteUser}>Delete</button>
-      <button name="save" onClick={deleteUser}>Save</button>
+    <div>
+      {name}
+      {age}
+      {lessons.map((el, index) => {
+        return  <li key={index}>{el.title}</li> 
+      })}
     </div>
-  );
+  )
 }
 
 
