@@ -1,67 +1,56 @@
 
 
-type LessonsPropsType = {
-  title: string
-}
+let users = [
+  { name: "Lexa1", age: 15 },
+  { name: "Lexa2", age: 32 },
+  { name: "Lexa3", age: 25 },
+]
 
-export type ManPropsType = {
-  name: string,
-  age: number,
-  lessons: LessonsPropsType[]
-}
+let admins = users
 
-let user = {
-  name: "Lera",
-  age: 22,
-  address: {
-    city: {
-      title: "Minsk"
-    }
+admins.push({ name: "Lexa00", age: 0 })
+
+console.log(users);
+
+
+let users1 = [
+  {
+    name: "Lexa3",
+    age: 25,
+    address: { title: "Minsk" }
+  },
+]
+
+
+let users2 = {
+    name: "Lexa3",
+    age: 25,
+    address: { title: "Minsk" }
   }
-}
-
-let users = ["Lera", "Lera2", "Lera3", "Lera4"]
 
 
-let userObj = {
-  "0": "Lera0",
-  "1": "Lera1",
-  "2": "Lera2",
-  "3": "Lera3"
-}
+let users3 = {
+    name: "Lexa3",
+    age: 25,
+    address: users2.address
+  }
+
+  const users4 = [users2, users3, {name: "Lexa4", age: 1465, address: users2.address}]
+
+  users3.address.title = "Bla bla"
 
 
-let obj1 = {
-  "101": { id: 101, name: "Lera0" },
-  "3245": { id: 3245, name: "Lera1" },
-  "1545134": { id: 1545134, name: "Lera2" },
-  "11201": { id: 11201, name: "Lera3" },
-}
+  
+  console.log(users3.address.title);
+  console.log(users2.address.title);
+  
 
-let newUser = { id: 52342345, name: "Lexa" }
+
+
 
 export const Component = () => {
-
   return (
     <div>
-      <div>
-        {user.address.city.title}
-      </div>
-      <div>
-        {user['address']['city']['title']}
-      </div>
-      <div>
-        {userObj['3']}
-      </div>
-      <div>
-        {Object.keys(userObj)}
-      </div>
-      
-      <div>
-        {Object.values(userObj)}
-      </div>
-
-
     </div>
   )
 }
