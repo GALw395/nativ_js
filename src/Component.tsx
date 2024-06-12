@@ -1,49 +1,47 @@
 
-
-let users = [
-  { name: "Lexa1", age: 15 },
-  { name: "Lexa2", age: 32 },
-  { name: "Lexa3", age: 25 },
-]
-
-let admins = users
-
-admins.push({ name: "Lexa00", age: 0 })
-
-console.log(users);
-
-
-let users1 = [
-  {
-    name: "Lexa3",
-    age: 25,
-    address: { title: "Minsk" }
-  },
-]
-
-
-let users2 = {
-    name: "Lexa3",
-    age: 25,
-    address: { title: "Minsk" }
-  }
-
-
 let users3 = {
-    name: "Lexa3",
-    age: 25,
-    address: users2.address
+  name: "Lexa3",
+  age: 25,
+  address: {
+    city: 'Minsk'
   }
+}
 
-  const users4 = [users2, users3, {name: "Lexa4", age: 1465, address: users2.address}]
+function fun(u: any, city: string) {
+  return users3 = { ...u, address: { ...u.address, city: city } }
+}
 
-  users3.address.title = "Bla bla"
+console.log(fun(users3, 'pdsachjbksj'));
+console.log(users3.address.city);
+
+let users4 = {
+  name: "Lexa3",
+  age: 25,
+  address: {
+    city: 'Minsk'
+  },
+  books: ['1', '2', '3']
+}
+
+let books12 = '4'
 
 
-  
-  console.log(users3.address.title);
-  console.log(users2.address.title);
-  
+function fun2(u: any, books12: any) {
+  return { ...u, books: [...u.books, books12] }
+}
+
+let copy = fun2(users4, books12)
+
+
+console.log(copy);
+console.log(users4.books);
+
+// b => b === 'js' ? 'ts' : b
+// b => b !== 'js' ? b : 'ts'
+
+
+
+
 
 
 
